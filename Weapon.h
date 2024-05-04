@@ -7,8 +7,10 @@ class Weapon : public Item
 {
 public:
     Weapon(const std::string& name, int bonusDamage);
-    virtual ~Weapon();
-    virtual std::string ToString() const;
+    ~Weapon();
+    int getBonusDamage();
+    std::string ToString() const;
+    void use(Hero* hero);
 
 private:
     int bonusDamage;

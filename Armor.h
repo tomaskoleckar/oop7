@@ -7,8 +7,8 @@ class Armor : public Item
 {
 public:
     Armor(const std::string&, int armorValue);
-    virtual ~Armor();
-    virtual std::string ToString() const;
+    ~Armor();
+    std::string ToString() const;
 
 private:
     int armorValue;

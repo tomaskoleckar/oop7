@@ -7,6 +7,7 @@
 #include "Monster.h"
 #include "Trophy.h"
 #include "Item.h"
+#include "Weapon.h"
 
 class Hero : public Sprite
 {
@@ -16,6 +17,10 @@ public:
     double getMoney();
     void attack(Monster* targetSprite);
     void sellTrophy();
+    double getArmor();
+    Weapon* getWeapon();
+    void setWeapon(Weapon* weapon);
+    void setArmor(double armor);
     void addToInventory(Item* item);
     void printInventory(); 
     ~Hero();
@@ -23,6 +28,7 @@ public:
 private:
     double armor;
     double money;
+    Weapon* weapon;
     std::vector<Trophy> trophies;
     Inventory inventory;
 };

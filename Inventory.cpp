@@ -27,3 +27,18 @@ void Inventory::printAllItems() const {
         std::cout << "- " << item->ToString() << std::endl;
     }
 }
+
+void Inventory::useItem(int index)
+{
+    if(index < this->items.size()){
+        if(this->items[index]->isUsed()){
+            this->items[index]->use(this->hero);
+        }
+        else{
+        std::cout << "Item already being used !" << std::endl;
+        }
+    }
+    else{
+        std::cout << "Item not in inventory !" << std::endl;
+    }
+}

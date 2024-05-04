@@ -11,3 +11,9 @@ std::string Armor::ToString() const {
     ss << name << ", adds " << armorValue << " armor";
     return ss.str();
 }
+
+void Armor::use(Hero *hero)
+{
+    this->wasUsed = true;
+    hero->setArmor(hero->getArmor() + this->armorValue);
+}
